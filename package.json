@@ -2,7 +2,7 @@
   "name": "advancly-widget-react",
   "author": "Gbenga Olufeyimi <advanclyloans@gmail.com> (https://www.advancly.com)",
   "module": "dist/mylib.esm.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This is the package that can be used to integrate advancly loan widget into your react native mobile app",
   "license": "MIT",
   "main": "dist/index.js",
