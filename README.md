@@ -1,30 +1,16 @@
-# Advancly Widget React Native
+# Advancly Widget React
 
 This package enables you to give loans to your borrowers through Advancly widget. Install, and have fun with it.
 
 ## Installation
 
-To add Advancly Widget to your React Native project, run;
+To add Advancly Widget to your React project, run;
 
-`npm install advancly-widget-react-native`
+`npm install advancly-widget-react`
 
 or
 
-`yarn add advancly-widget-react-native`
-
-## One more thing
-
-This package has a dependency. The name of the dependency is **react-native-webview**
-
-To add this dependency, run
-
-`yarn add react-native-webview`
-
-for iOS: `cd iOS && pod install && cd ..`
-
-for expo applications run;
-
-`expo install react-native-webview`
+`yarn add advancly-widget-react`
 
 and that's it, you're all good to go!
 
@@ -34,72 +20,84 @@ and that's it, you're all good to go!
 <img width="306" alt="Screenshot of library for signup" src="https://user-images.githubusercontent.com/102379468/160243727-50ba9bbe-c222-4646-b9f7-4d46a42cddff.png">
 <img width="306" alt="Screenshot of library for requesting loan" src="https://user-images.githubusercontent.com/102379468/160243726-cfc7466e-0410-4445-b850-74a32675e95c.png">
 
-### [](https://github.com/AdvanclyDev/advancly-widget-react-native#usage)Usage
+### [](https://github.com/AdvanclyDev/advancly-widget-react#usage)Usage
 
 ```javascript
-import { Fragment, useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { AdvanclyWidget, advanclyProps } from 'advancly-widget-react-native';
+import { Fragment, useState } from "react";
+import { AdvanclyWidget, advanclyProps } from "advancly-widget-react";
 
 export default function App() {
+  const [showModal, setShowModal] = useState(false);
   const onSuccess = (response: advanclyProps.IResponse) => {
-    console.log('Success', JSON.stringify(response));
-  };
-  const onError = (response: advanclyProps.IResponse) => {
-    console.log('Error', JSON.stringify(response));
+    setShowModal(false);
+    console.log("Success", JSON.stringify(response));
   };
   const onCancel = (response: advanclyProps.IResponse) => {
-    console.log('Cancel', JSON.stringify(response));
+    setShowModal(false);
+    console.log("Cancel", JSON.stringify(response));
   };
 
-  const [showWidget, setShowWidget] = useState(false);
   return (
     <Fragment>
-      <TouchableOpacity
-        onPress={() => {
-          setShowWidget(true);
+      <div
+        style={{
+          marginTop: 100,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-        style={{ margin: 100, backgroundColor: '#377dff' }}
       >
-        <Text style={{ color: '#fff' }}>Show Widget</Text>
-      </TouchableOpacity>
+        <button
+          onClick={() => {
+            setShowModal(true);
+          }}
+          style={{
+            backgroundColor: "#377dff",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            borderColor: "#377dff",
+            borderWidth: "1px",
+          }}
+        >
+          Show Widget
+        </button>
+      </div>
 
       <AdvanclyWidget
-        aggregator_id={1}
-        bank_account_number="0000000000"
-        bank_code="000"
-        borrower_phone="08000000000"
-        bvn_number="22222222222"
+        aggregator_id={29}
+        bank_account_number="3055662696"
+        bank_code="011"
+        borrower_phone="08141200649"
+        bvn_number="22247846872"
         aggregator_loan_ref={Date.now().toString()}
-        cac_number="22332222"
-        city="Lagos"
-        company_name="Advancly Technologies Limited"
+        cac_number="2366664"
+        city="Mubuntu"
+        company_name="HAIRTOPIA EX PARTE"
         customer_type="1"
-        email="helloworld@test.com"
-        first_name="Test"
+        email="gbengacodes@gmail.com"
+        first_name="Gbenga"
         gender="male"
-        last_name="User"
+        last_name="Olufeyimi"
         photo_url=""
-        public_key="enter-your-public-key-here"
-        residence_address="123, Amen Road"
+        public_key="AYAyAToX8gZQKJwX"
+        residence_address="80 Bola Street Ebute Metta"
         state="Lagos"
-        product_id={00}
-        product_code="ABC"
-        tenure={00}
+        product_id={53}
+        product_code="C044"
+        tenure={30}
         customStyles={{
-          buttonBackgroundColor: '#377dff',
-          buttonTextColor: '#fff',
-          acceptButtonBackgroundColor: '#377dff',
-          acceptButtonTextColor: '#fff',
-          declineButtonBackgroundColor: '#377dff',
-          declineButtonTextColor: '#fff',
-          dropdownTextColor: '#000',
-          dropdownBackgroundColor: '#fff',
+          buttonBackgroundColor: "#377dff",
+          buttonTextColor: "#fff",
+          acceptButtonBackgroundColor: "#377dff",
+          acceptButtonTextColor: "#fff",
+          declineButtonBackgroundColor: "#377dff",
+          declineButtonTextColor: "#fff",
+          dropdownTextColor: "#000",
+          dropdownBackgroundColor: "#fff",
         }}
         onSuccess={onSuccess}
-        onError={onError}
         onCancel={onCancel}
-        showWidget={showWidget}
+        showWidget={showModal}
         autoStart={false}
         environment={advanclyProps.ENVIRONMENT.TEST}
       />
@@ -139,11 +137,11 @@ export default function App() {
 | `showWidget`                         |                                      A boolean that controls when then widget is shown                                      |                 default: `false` |
 | `environment`                        | An enum that tells the environment the widget should be shown in. This can be either `"test"`, `"staging"`, `"production"`. |                default: `"test"` |
 
-## [](https://github.com/AdvanclyDev/advancly-widget-react-native#contributions)Contributions
+## [](https://github.com/AdvanclyDev/advancly-widget-react#contributions)Contributions
 
-Want to help make this package even more awesome? [Read how to contribute](https://github.com/AdvanclyDev/advancly-widget-react-native/blob/master/CONTRIBUTING.md) and feel free to send in your PR!
+Want to help make this package even more awesome? [Read how to contribute](https://github.com/AdvanclyDev/advancly-widget-react/blob/master/CONTRIBUTING.md) and feel free to send in your PR!
 
-## [](https://github.com/AdvanclyDev/advancly-widget-react-native#licensing)Licensing
+## [](https://github.com/AdvanclyDev/advancly-widget-react#licensing)Licensing
 
 This project is licensed under MIT license.
 
