@@ -16,9 +16,9 @@ and that's it, you're all good to go!
 
 ### Screenshots of the widget
 
-<img width="306" alt="Screenshot of library while loading" src="https://user-images.githubusercontent.com/102379468/160243723-e40f5f2c-146d-450b-8b9e-2603ea7061bf.png">
-<img width="306" alt="Screenshot of library for signup" src="https://user-images.githubusercontent.com/102379468/160243727-50ba9bbe-c222-4646-b9f7-4d46a42cddff.png">
-<img width="306" alt="Screenshot of library for requesting loan" src="https://user-images.githubusercontent.com/102379468/160243726-cfc7466e-0410-4445-b850-74a32675e95c.png">
+<img width="1200" alt="Screenshot of library while loading" src="https://user-images.githubusercontent.com/102379468/160486425-efa7502b-c682-4770-8674-a61ef5286c7b.png">
+<img width="1200" alt="Screenshot of library for signup" src="https://user-images.githubusercontent.com/102379468/160486402-55a6f596-7a96-43bb-be31-c0d41d79170d.png">
+<img width="1200" alt="Screenshot of library for requesting loan" src="https://user-images.githubusercontent.com/102379468/160486420-58fd9db8-7543-4c0c-ab8a-0803b49197a4.png">
 
 ### [](https://github.com/AdvanclyDev/advancly-widget-react#usage)Usage
 
@@ -65,26 +65,26 @@ export default function App() {
 
       <AdvanclyWidget
         aggregator_id={29}
-        bank_account_number="3055662696"
-        bank_code="011"
-        borrower_phone="08141200649"
-        bvn_number="22247846872"
+        bank_account_number="1122334455"
+        bank_code="000"
+        borrower_phone="08100000000"
+        bvn_number="22222222222"
         aggregator_loan_ref={Date.now().toString()}
-        cac_number="2366664"
+        cac_number="2222222"
         city="Mubuntu"
         company_name="HAIRTOPIA EX PARTE"
         customer_type="1"
-        email="gbengacodes@gmail.com"
-        first_name="Gbenga"
+        email="hellworld@gmail.com"
+        first_name="John"
         gender="male"
-        last_name="Olufeyimi"
+        last_name="Doe"
         photo_url=""
-        public_key="AYAyAToX8gZQKJwX"
-        residence_address="80 Bola Street Ebute Metta"
+        public_key="AAAAAAAAAAAA"
+        residence_address="100 Lagos Road"
         state="Lagos"
-        product_id={53}
-        product_code="C044"
-        tenure={30}
+        product_id={00}
+        product_code="AAAA"
+        tenure={00}
         customStyles={{
           buttonBackgroundColor: "#377dff",
           buttonTextColor: "#fff",
